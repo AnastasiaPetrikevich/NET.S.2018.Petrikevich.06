@@ -13,7 +13,7 @@ namespace Plynomial.Tests
     {
         [TestCase(1, 0, -3, 4, ExpectedResult = "+4x^3-3x^2+1=0")]
         [TestCase(1, 2, 3, 4, ExpectedResult = "+4x^3+3x^2+2x^1+1=0")]
-        public string Test_Polinom_toString(params double[] array)
+        public string Polynomials_ToString(params double[] array)
         {
             Polynomial.Polynomial polynomial = new Polynomial.Polynomial(array);
             return polynomial.ToString();
@@ -53,7 +53,7 @@ namespace Plynomial.Tests
             return result.ToString();
         }
 
-        [TestCase(ExpectedResult = "+1x^3-1x^2+2x^1-1=0")]
+        [TestCase(ExpectedResult = "-1x^3+1x^2-2x^1+1=0")]
         public string Substract_Two_Polynomials()
         {
             Polynomial.Polynomial first = new Polynomial.Polynomial(2, 0, 2);
