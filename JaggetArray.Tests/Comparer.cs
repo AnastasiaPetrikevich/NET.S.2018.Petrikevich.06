@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JaggetArray
+namespace JaggetArray.Tests
 {
     public class SortBySumIncrease : IComparer<int[]>
     {
@@ -117,5 +116,4 @@ namespace JaggetArray
             return min;
         }
     }
-
 }
