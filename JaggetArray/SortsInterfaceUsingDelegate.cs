@@ -9,7 +9,6 @@ namespace JaggetArray
     /// <summary>
     /// Contains methods for work whith jagget arrays.
     /// </summary>
-
     public static class SortsInterfaceUsingDelegate
     {
         public delegate int Comparer(int[] firstArray, int[] secondArray);
@@ -71,6 +70,5 @@ namespace JaggetArray
             first = second;
             second = temp;
         }
-
     }
 }
