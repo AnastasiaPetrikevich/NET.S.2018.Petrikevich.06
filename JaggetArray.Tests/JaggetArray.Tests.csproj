@@ -47,7 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comparer.cs" />
-    <Compile Include="SortsTests.cs" />
+    <Compile Include="SortsInterfaceUsingDelegateTests.cs" />
+    <Compile Include="SortsDelegateUsingInterfaceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

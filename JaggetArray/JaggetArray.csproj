@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sorts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortsDelegateUsingInterface.cs" />
+    <Compile Include="SortsInterfaceUsingDelegate.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

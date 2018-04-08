@@ -62,7 +62,7 @@ namespace JaggetArray.Tests
                 return -1;
             if (rhs == null)
                 return 1;
-            return -Comparer.MinElement(lhs) + Comparer.MinElement(rhs);
+            return Comparer.MinElement(lhs) - Comparer.MinElement(rhs);
         }
     }
 
@@ -74,7 +74,7 @@ namespace JaggetArray.Tests
                 return 1;
             if (rhs == null)
                 return -1;
-            return Comparer.MinElement(lhs) - Comparer.MinElement(rhs);
+            return -Comparer.MinElement(lhs) + Comparer.MinElement(rhs);
         }
     }
 

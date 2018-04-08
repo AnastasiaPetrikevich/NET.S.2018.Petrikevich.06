@@ -4,20 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using JaggetArray;
-using NUnit.Framework.Interfaces;
+using static JaggetArray.SortsInterfaceUsingDelegate;
 
 namespace JaggetArray.Tests
 {
     [TestFixture]
-    public class SortsTests
+    class SortsInterfaceUsingDelegateTests
     {
         [Test]
         public void BublleSort_SortBySum_Increase()
         {
             int[][] actual = { new[] { 1, 2, 3, 4 }, new[] { 1, 2, 3 }, null, new[] { 1, 2, 3, 4, 5 }, new[] { 1 } };
             int[][] expected = { new[] { 1 }, new[] { 1, 2, 3 }, new[] { 1, 2, 3, 4 }, new[] { 1, 2, 3, 4, 5 }, null };
-            Sorts.BublleSort(actual, new SortBySumIncrease());
+            BublleSort(actual, new SortBySumIncrease());
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -26,7 +25,7 @@ namespace JaggetArray.Tests
         {
             int[][] actual = { new[] { 1, 2, 3, 4 }, new[] { 1, 2, 3 }, null, new[] { 1, 2, 3, 4, 5 }, new[] { 1 } };
             int[][] expected = { null, new[] { 1, 2, 3, 4, 5 }, new[] { 1, 2, 3, 4 }, new[] { 1, 2, 3 }, new[] { 1 } };
-            Sorts.BublleSort(actual, new SortBySumDecrease());
+            BublleSort(actual, new SortBySumDecrease());
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -35,7 +34,7 @@ namespace JaggetArray.Tests
         {
             int[][] actual = { new[] { 1, 2, 3, 4 }, new[] { -1, 2, 3 }, null, new[] { 1, 2, 3, -4, 5 }, new[] { 1 } };
             int[][] expected = { new[] { 1 }, new[] { -1, 2, 3 }, new[] { 1, 2, 3, 4 }, new[] { 1, 2, 3, -4, 5 }, null };
-            Sorts.BublleSort(actual, new SortByMaxElementIncrease());
+            BublleSort(actual, new SortByMaxElementIncrease());
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -44,7 +43,7 @@ namespace JaggetArray.Tests
         {
             int[][] actual = { new[] { 1, 2, 3, 4 }, new[] { -1, 2, 3 }, null, new[] { 1, 3, -4, 5 }, new[] { 1 } };
             int[][] expected = { null, new[] { 1, 3, -4, 5 }, new[] { 1, 2, 3, 4 }, new[] { -1, 2, 3 }, new[] { 1 } };
-            Sorts.BublleSort(actual, new SortByMaxElementDecrease());
+            BublleSort(actual, new SortByMaxElementDecrease());
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -53,7 +52,7 @@ namespace JaggetArray.Tests
         {
             int[][] actual = { new[] { 1, 2, -3, 4 }, new[] { -1, -2, 3 }, null, new[] { 1, 2, 3, -4, 5 }, new[] { 1 } };
             int[][] expected = { new[] { 1 }, new[] { -1, -2, 3 }, new[] { 1, 2, -3, 4 }, new[] { 1, 2, 3, -4, 5 }, null };
-            Sorts.BublleSort(actual, new SortByMaxElementIncrease());
+            BublleSort(actual, new SortByMinElementIncrease());
             CollectionAssert.AreEqual(expected, actual);
         }
 
@@ -62,8 +61,9 @@ namespace JaggetArray.Tests
         {
             int[][] actual = { new[] { 1, 2, -3, 4 }, new[] { -1, -2, 3 }, null, new[] { 1, 2, 3, -4, 5 }, new[] { 1 } };
             int[][] expected = { null, new[] { 1, 2, 3, -4, 5 }, new[] { 1, 2, -3, 4 }, new[] { -1, -2, 3 }, new[] { 1 } };
-            Sorts.BublleSort(actual, new SortByMaxElementDecrease());
+            BublleSort(actual, new SortByMinElementDecrease());
             CollectionAssert.AreEqual(expected, actual);
         }
+
     }
 }
