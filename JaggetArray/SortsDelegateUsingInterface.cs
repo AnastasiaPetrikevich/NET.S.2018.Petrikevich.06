@@ -11,13 +11,11 @@ namespace JaggetArray
     /// </summary>
     public static class SortsDelegateUsingInterface
     {
-        public delegate int Comparer(int[] firstArray, int[] secondArray);
-
         /// <summary>
         /// Sorts jagget array using interface.
         /// </summary>
         /// <param name="array">Jagget array.</param>
-        /// <param name="comparer">How sorts</param>
+        /// <param name="comparer">How sorts.</param>
         public static void BublleSort(int[][] array, IComparer<int[]> comparer)
         {
             if (array == null)
@@ -48,14 +46,19 @@ namespace JaggetArray
         /// </summary>
         /// <param name="array">Jagget array.</param>
         /// <param name="comparer">How sorts</param>
-        public static void BublleSort(int[][] array, Comparer comparer)
+        public static void BublleSort(int[][] array, Func<int[], int[], int> comparer)
         {
+            if (array == null)
+            {
+                throw new ArgumentNullException(nameof(array));
+            }
+
             if (comparer == null)
             {
                 throw new ArgumentNullException(nameof(comparer));
             }
 
-            IComparer<int[]> newComparer = comparer.Target as IComparer<int[]>;
+            IComparer<int[]> newComparer = new Adapter(comparer);
             BublleSort(array, newComparer);
         }
 
